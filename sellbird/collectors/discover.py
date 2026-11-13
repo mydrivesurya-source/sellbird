@@ -1115,6 +1115,15 @@ class OpenStreetMap(DiscoveryProvider):
         "panader": ['shop=bakery'],
         "clinica": ['amenity=clinic'],
         "clínica": ['amenity=clinic'],
+        # Schools. The early-years terms come first: "preschool" also
+        # contains "school", and the first match wins.
+        "preschool": ['amenity=kindergarten'],
+        "pre-school": ['amenity=kindergarten'],
+        "playschool": ['amenity=kindergarten'],
+        "play school": ['amenity=kindergarten'],
+        "kindergarten": ['amenity=kindergarten'],
+        "nursery school": ['amenity=kindergarten'],
+        "school": ['amenity=school'],
     }
 
     def _tags(self, term: str) -> list[str]:
